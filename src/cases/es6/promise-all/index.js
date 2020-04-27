@@ -9,8 +9,5 @@ cb是回调函数, 请将结果(数组)(按照顺序)作为第一个参数传入
 
 
 module.exports = (f1, arr, cb) => {
-    Promise.all(arr.forEach(element => {
-        f1(element);
-    })).then((resolved) => cb(resolved));
-
+    Promise.all(arr.map(element => f1(element))).then((resolved) => cb(resolved));
 };

@@ -31,9 +31,10 @@ const persons = [
 /**
  * @param persons {Array<{name:string,age:number,enabled:boolean}>}
  */
-module.exports = function arrayProcess1(persons) {
+module.exports = function arrayProcess1(persons = []) {
 
-    const filterPersons = persons.filter(person => person.enabled && person.age >= 30);
-    return filterPersons.map(filterPersons => filterPersons.name);
+    // const filterPersons = persons.filter(person => person.enabled && person.age >= 30);
+    // return filterPersons.map(filterPersons => filterPersons.name);
+    return persons.filter(person => person.enabled && person.age >= 30).map(filterPersons => filterPersons.name);
 
 };
